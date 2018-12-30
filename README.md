@@ -108,11 +108,28 @@ Options are:
 
 You can easily enable support for source-maps (making stacktraces easier to read) by installing and using the following plugin:
 
-```sh
-yarn add --dev source-map-support
+```bash
+yarn add -D source-map-support
 ```
 
 ```ts
 // inside of your function
 import 'source-map-support/register';
+```
+
+or using [babel plugin](https://github.com/chocolateboy/babel-plugin-source-map-support):
+
+```bash
+yarn add source-map-support
+yarn add -D babel-plugin-source-map-support
+```
+
+in `.babelrc`:
+```json
+{
+    "plugins": [
+        "source-map-support"
+    ]
+    ...
+}
 ```

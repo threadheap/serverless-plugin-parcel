@@ -1,0 +1,55 @@
+{
+    "name": "serverless-plugin-parcel",
+    "version": "0.1.0",
+    "main": "dist/index.js",
+    "description": "A Serverless plugin to bundle your functions and assets with Parcel Bundler",
+    "license": "MIT",
+    "author": {
+        "name": "Pavel Vlasov",
+        "email": "freakycue@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/threadheap/serverless-plugin-parcel.git"
+    },
+    "keywords": [
+        "serverless",
+        "serverless plugin",
+        "es6",
+        "es7",
+        "typescript",
+        "babel",
+        "parcel",
+        "aws lambda"
+    ],
+    "dependencies": {
+        "fs-extra": "^7.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0-0",
+        "@babel/plugin-proposal-class-properties": "^7.2.3",
+        "@babel/plugin-proposal-decorators": "^7.2.3",
+        "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/preset-env": "^7.2.3",
+        "@babel/preset-typescript": "^7.1.0",
+        "@types/fs-extra": "^5.0.4",
+        "@types/parcel-bundler": "^1.10.1",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-jest": "^23.6.0",
+        "parcel-bundler": "^1.11.0",
+        "typescript": "^3.2.2"
+    },
+    "peerDependencies": {
+        "parcel-bundler": "*"
+    },
+    "scripts": {
+        "prepublish": "yarn run build",
+        "precommit": "yarn run lint",
+        "build": "rm -rf dist && NODE_ENV=production parcel src/index.ts --target=node",
+        "pretest": "yarn run lint",
+        "test": "jest",
+        "lint": "tslint -c tslint.json 'src/**/*.ts'",
+        "lint:fix": "yarn lint --fix"
+    }
+}

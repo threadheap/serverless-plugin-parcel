@@ -1,0 +1,61 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended", "tslint-consistent-codestyle"],
+    "jsRules": {},
+    "rules": {
+        "trailing-comma": [false],
+        "object-literal-sort-keys": [false],
+        "no-var-requires": [false],
+        "variable-name": [false],
+        "interface-name": [false],
+        "semicolon": [false],
+        "object-literal-key-quotes": [false],
+        "arrow-parens": [false],
+        "naming-convention": [
+            true,
+            {
+                "type": "default",
+                "format": ["camelCase", "PascalCase"],
+                "leadingUnderscore": "forbid",
+                "trailingUnderscore": "forbid"
+            },
+            {
+                "type": "variable",
+                "modifiers": ["global", "const"],
+                "format": ["UPPER_CASE", "camelCase", "PascalCase"]
+            },
+            {
+                "type": "function",
+                "format": ["camelCase", "PascalCase"]
+            },
+            {
+                "type": "property",
+                "modifiers": ["private"],
+                "leadingUnderscore": "require",
+                "final": true
+            },
+            {
+                "type": "parameter",
+                "leadingUnderscore": "allow",
+                "final": true
+            },
+            {
+                "type": "parameterProperty",
+                "modifiers": "private",
+                "leadingUnderscore": "require"
+            },
+            { "type": "type", "format": "PascalCase" },
+            { "type": "class", "modifiers": "abstract", "prefix": "Abstract" },
+            { "type": "genericTypeParameter", "prefix": "T" },
+            { "type": "enumMember", "format": "PascalCase" }
+        ]
+    },
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            "services/frontend/**",
+            "**/node_modules/**",
+            "node_modules/**"
+        ]
+    }
+}

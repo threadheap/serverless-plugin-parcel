@@ -1,0 +1,24 @@
+service: serverless-parcel-plugin-example-typescript
+
+provider:
+    name: aws
+    runtime: nodejs8.10
+
+plugins:
+    - serverless-offline
+    - serverless-plugin-parcel
+
+package:
+    individually: true
+
+custom:
+    serverless-iam-roles-per-function:
+        defaultInherit: true
+
+functions:
+    Hello:
+        handler: src/index.default
+        events:
+            - http:
+                  path: /hello
+                  method: get

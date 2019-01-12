@@ -133,3 +133,7 @@ in `.babelrc`:
     ...
 }
 ```
+
+## Alternatives
+
+[serverless-parcel](https://github.com/johnagan/serverless-parcel)

@@ -123,20 +123,17 @@ class ServerlessPluginParcel {
                 });
             }
         } else {
-            // wait for all funtions to bundle
-            await Promise.all(
-                this.entries.map(entry => {
-                    const bundler = new Bundler(entry, {
-                        ...config,
-                        outDir: path.relative(
-                            this.buildPath,
-                            path.dirname(entry)
-                        )
-                    });
+            for (const entry of this.entries) {
+                const bundler = new Bundler(entry, {
+                    ...config,
+                    outDir: path.relative(
+                        this.originalServicePath,
+                        path.join(this.buildPath, path.dirname(entry))
+                    )
+                });
 
-                    return bundler.bundle();
-                })
-            );
+                await bundler.bundle();
+            }
         }
     }
 

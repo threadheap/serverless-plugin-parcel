@@ -1,6 +1,7 @@
 # serverless-plugin-parcel
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![npm version](https://badge.fury.io/js/serverless-plugin-parcel.svg)](https://badge.fury.io/js/serverless-plugin-parcel)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fthreadheap%2Fserverless-plugin-parcel.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fthreadheap%2Fserverless-plugin-parcel?ref=badge_shield)
 
 Serverless plugin for zero-config ES6/7 and Typescript support
 
@@ -141,3 +142,7 @@ in `.babelrc`:
 ## Author
 
 [Pavel Vlasov](https://github.com/pavelvlasov)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fthreadheap%2Fserverless-plugin-parcel.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fthreadheap%2Fserverless-plugin-parcel?ref=badge_large)

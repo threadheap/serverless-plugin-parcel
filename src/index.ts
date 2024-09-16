@@ -79,7 +79,8 @@ class ServerlessPluginParcel {
         if (!this.originalServicePath) {
             // Save original service path and functions
             this.originalServicePath = this.sls.config.servicePath;
-            this.buildPath = path.join(this.originalServicePath, buildFolder);
+            this.buildFolder = options.buildFolder || buildFolder;
+            this.buildPath = path.join(this.originalServicePath, this.buildFolder);
             // Fake service path so that serverless will know what to zip
             this.sls.config.servicePath = this.buildPath;
         }
@@ -139,7 +140,7 @@ class ServerlessPluginParcel {
 
     async moveArtifacts(): Promise<void> {
         await fs.copy(
-            path.join(this.originalServicePath, buildFolder, serverlessFolder),
+            path.join(this.originalServicePath, this.buildFolder, serverlessFolder),
             path.join(this.originalServicePath, serverlessFolder)
         );
 
